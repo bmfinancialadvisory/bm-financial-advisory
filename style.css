@@ -293,11 +293,35 @@ footer {
     margin-top: 80px;
     font-size: 0.9rem;
 }
-
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
-    .nav-links { display: none; } 
-    .hero h1 { font-size: 2.2rem; }
+    /* Instead of hiding the navigation, change it to a flexible layout */
+    nav.main-nav {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 10px;
+        text-align: center;
+    }
+
+    .nav-links {
+        display: flex;         /* Show the links on mobile */
+        flex-wrap: wrap;       /* Wrap them automatically if the screen is narrow */
+        justify-content: center;
+        gap: 12px;             /* Space between menu buttons */
+        padding-left: 0;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;    /* Make text slightly smaller so it fits beautifully */
+        padding: 6px 10px;
+        background: rgba(255, 255, 255, 0.05); /* Soft background button look */
+        border-radius: 4px;
+        display: inline-block;
+    }
+
+    /* Adjust main content headers for mobile sizing */
+    .hero h1 { font-size: 2rem; }
+    .hero p { font-size: 1rem; }
     .contact-layout { grid-template-columns: 1fr; }
 }
 
