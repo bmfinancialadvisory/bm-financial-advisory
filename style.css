@@ -1,1 +1,298 @@
-body{font-family:Arial;margin:0;background:#f4f6f8}header{background:#072635;color:#fff;padding:25px;text-align:center}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;padding:30px}.card,.box{background:#fff;margin:20px;padding:25px;border-radius:8px;box-shadow:0 2px 10px #0002}input,textarea{display:block;width:100%;margin:10px 0;padding:10px}button{padding:10px 20px;background:#c3a153;border:0}
+/* --- Global Reset & Variables --- */
+:root {
+    --primary: #072635;
+    --secondary: #c3a153;
+    --secondary-hover: #b08f42;
+    --dark: #1f2937;
+    --light: #f8fafc;
+    --white: #ffffff;
+    --gray: #64748b;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+/* --- Navigation Bar --- */
+header.navbar-container {
+    background: var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+nav.main-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+nav.main-nav h2 a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+nav.main-nav h2 span {
+    color: var(--secondary);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+.nav-links .btn-nav {
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.nav-links .btn-nav:hover {
+    background: var(--white);
+    color: var(--primary);
+}
+
+/* --- Hero Section --- */
+.hero {
+    background: linear-gradient(135deg, #072635 0%, #0d3d54 100%);
+    color: var(--white);
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-bottom: 35px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--secondary);
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--secondary-hover);
+    transform: translateY(-2px);
+}
+
+/* --- Stats Bar --- */
+.stats {
+    max-width: 1000px;
+    margin: -40px auto 50px auto;
+    background: var(--white);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    gap: 20px;
+}
+
+.stats-item h3 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.stats-item p {
+    color: var(--gray);
+    font-weight: 500;
+}
+
+/* --- Main Layout Sections --- */
+section.container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--secondary);
+    margin: 10px auto 0 auto;
+}
+
+/* --- Grid & Cards Styling --- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 4px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-top-color: var(--secondary);
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+/* --- Advisor & Team Layout --- */
+.advisor-card {
+    text-align: center;
+}
+
+.advisor-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--secondary);
+}
+
+.advisor-card h3 {
+    margin-bottom: 5px;
+}
+
+.advisor-card p {
+    color: var(--gray);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* --- Form and Boxes --- */
+.box {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+form input, form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* --- Footer --- */
+footer {
+    background: #041620;
+    color: #94a3b8;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 80px;
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Simplify for mobile */
+    .hero h1 { font-size: 2.2rem; }
+    .contact-layout { grid-template-columns: 1fr; }
+}
